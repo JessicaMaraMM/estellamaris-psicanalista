@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Estella Maris | Psicanalista </title>
+    <link rel="icon" type="image/jpeg" href="{{ url_for('static', filename='images/logo-branca.jpg') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v={{ cache_version }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;700;800&family=Merriweather:wght@400;500&display=swap" rel="stylesheet">
+    <script async src="https://www.instagram.com/en_US/sdk.js#xfbml=1&version=v18.0" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='images/logo-estella.png') }}" alt="Estella Maris" class="logo-img">
+            </div>
+            <ul class="menu">
+                <li><a href="#sobre"><span class="menu-desktop">Sobre Mim</span><span class="menu-mobile">Sobre</span></a></li>   
+                <li><a href="#areas"><span class="menu-desktop">Áreas de Atuação</span><span class="menu-mobile">Atuação</span></a></li>
+                <li><a href="#metodo"><span class="menu-desktop">Método Alquimia Integrativa</span><span class="menu-mobile">Método</span></a></li>
+                <li><a href="#sessoes">Sessões</a></li>
+                <li><a href="#consultorio">Consultório</a></li>
+                <li><a href="#depoimentos">Depoimentos</a></li>
+                <li><a href="#videos">Vídeos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+            </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Estella Maris Psicanalista. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script>
+        // Processar embeds do Instagram
+        if (window.instgrm) {
+            window.instgrm.Embeds.process();
+        }
+    </script>
+</body>
+</html>
