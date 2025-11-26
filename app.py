@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, send_from_directory
 import time
 
 app = Flask(__name__)
@@ -19,10 +19,11 @@ def home():
     return render_template('index.html', cache_version=cache_version)
 
 
-if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)
-
-
+# 🔥 Rota de verificação do Google
 @app.route('/google427da0af51c12a44.html')
 def google_verification():
     return send_from_directory('static', 'google427da0af51c12a44.html')
+
+
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0', port=5000)
