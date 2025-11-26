@@ -1,4 +1,4 @@
-from flask import Flask, render_template, send_from_directory
+from flask import Flask, render_template
 import time
 
 app = Flask(__name__)
@@ -17,12 +17,6 @@ def home():
     # Força o navegador a recarregar os assets
     cache_version = int(time.time())
     return render_template('index.html', cache_version=cache_version)
-
-
-# 🔥 Rota de verificação do Google
-@app.route('/google427da0af51c12a44.html')
-def google_verification():
-    return send_from_directory('static', 'google427da0af51c12a44.html')
 
 
 if __name__ == '__main__':
