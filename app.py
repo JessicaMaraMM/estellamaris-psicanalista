@@ -24,5 +24,9 @@ def sitemap():
     return send_from_directory('static', 'sitemap.xml')
 
 
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory('static', 'favicon.ico')
+
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)
